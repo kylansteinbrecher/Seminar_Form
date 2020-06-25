@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html>
+<head>
+	<script src="process.js"></script>
+	<link rel="stylesheet" type="text/css" href="form.css"/>
+	<title>Confident Parenting</title>
+	
+</head>
+<body>
+	<div id="main">
+		<h1>Confident Parenting</h1>
+		<p id="info">
+			Fill out the form below to let us know which seminars you're interested in,<br/> 
+			and we'll send you the information about them.
+		</p>
+		<form  name="sForm">
+			<p class="input">
+				First Name:
+				<input type="text" name="first"/><br/>
+			</p>
+			<p class="input">
+				Last Name:
+				<input type="text" name="last"/><br/>
+			</p>
+			<p class="input">
+				Email:
+				<input type="text" name="email" /><br/>
+			</p>
+			<p class="input">
+				Phone Number:
+				<input type="text" name="phone"/><br/>
+			</p>
+			<hr/>
+			<span class="input">Seminars:(Check as many or few as you like)</span><br/>
+				<input class="input" type="checkbox" id="kids_OCD" name="class1" value="Parenting Kids With OCD" onclick="addSeminar(this.id)"/>
+					<label for="kids_OCD">Parenting Kids with OCD</label><br/>
+				<input class="input" type="checkbox" id="toddlers_anxiety" name="class2" value="Helping Toddlers with Separation Anxiety" onclick="addSeminar(this.id)"/>
+					<label for="toddlers_anxiety">Helping Toddlers with Separation Anxiety</label><br/>
+				<input class="input" type="checkbox" id="personify_anxiety" name="class3" value="How to Help Your Kids Personify & Name Anxiety" onclick="addSeminar(this.id)"/>
+					<label for="personify_anxiety">How to Help Your Kids Personify & Name Anxiety</label><br/>
+				<input class="input" type="checkbox" id="fight_negative" name="class4" value="How to Help Your Kids Fight Negative Thoughts" onclick="addSeminar(this.id)"/>
+					<label for="fight_negative">How to Help Your Kids Fight Negative Thoughts</label><br/>
+				<input class="input" type="checkbox" id="life_skills_teens" name="class5" value="Life Skills for Teens" onclick="addSeminar(this.id)"/>
+					<label for="life_skills_teens">Life Skills for Teens</label><br/>
+				<input class="input" type="checkbox" id="positive_discipline" name="class6" value="Positive Discipline" onclick="addSeminar(this.id)"/>
+					<label for="positive_discipline">Positive Discipline</label><br/>
+				<br/>
+			<span class="input">What time of day is best for you?</span><br/>
+				<input class="input" type="radio" id="morning" name="time" value="morning"/>
+					<label for="morning">Morning</label><br/>
+				<input class="input" type="radio" id="evening" name="time" value="evening"/>
+					<label for="evening">Evening</label><br/>
+				<input class="input" type="radio" id="other" name="time" value="other" onclick='document.getElementById("hidden_time").style.display="block"'/>
+					<label for="other">Other</label><br/>
+				<span id="hidden_time"><input class="input" type="text" id="other_time" name="other_time" placeholder="What time is best for you?"/></span>
+				<br/>
+				<input class="input" type="button" name="submit" value="Submit" onclick="processInfo()" />
+				<br/>
+			<div id="hidden">
+				<p  id="receipt"> 
+				Nothing
+				</p>
+				<p>
+				If the receipt information is correct, press Email.<br/>If not press Clear to start again.<br/>
+				</p>
+				<input type="submit" name="email_btn" value="Email" onclick="emailReceipt()"/>
+				<input type="reset" name="clear" value="Clear" onclick="clearEverything()"/>
+			</div>
+			
+		</form>
+		
+		<br/>
+		
+	</div>	
+	<div>
+		<input type="button" id="previous" name="previous" value="Previous" onclick="previous()"/>
+		<img id="picture"src="children_1.jpg"/>
+		<input type="button" id="next" name="next" value="Next" onclick="next()"/>
+	</div>
+</body>
+</html>
